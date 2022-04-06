@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins',sans-serif;
+/*  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);*/
+}
+
+
+body {
+/*   background-image: url('./img1.jpg');
+*/
+    background-image: 
+    /* top, transparent red */
+    linear-gradient(
+      rgba(0, 0, 0, 0.55), 
+      rgba(0, 0, 0, 0.55)
+    ),
+    /* your image */
+    url(img1.jpg);
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+     color: #fff;
+   }
+
+nav a h4{
+   style=" margin-left: 10px;
+   border-style: solid;"
+   border-color: yellow;
+}
+
+.container h2  {
+color: #006DCC;
+}
+
+.container {
+margin-top: 30px;
+}
+
+.result1 {
+  background-color: rgba(0,0,0,0.4);
+  border-style: solid;
+  border-color: rgba(0,0,0,0.1);
+  height: 80px;
+  width: 350px;
+  text-align: center;
+  justify-content: center;
+}
+.pred1 {
+  padding-top: 20px;
+  color: #00FF00;
+}
+.pred2 {
+  padding-top: 20px;
+  color: #ff5a36;
+}
+
+.container2 {
+margin-top: 1px;
+text-align: center;
+ background-color: rgba(255,255,255,0.2);
+ color: #006DCC;
+
+}
+
+.container2 h4 {
+  margin-top: 20px;
+}
+
+.flex-container {
+  display: flex;
+/*  background-color: #f4f4f4;*/
+  justify-content: right;
+  align-items: center;
+
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+
+/*  background: #254de4;*/
+/*  margin: 5px;*/
+  color: #fff;
+  padding-left: 10px;
+  padding-right:10px;
+}
+
+.item label {
+  margin-top: 15px;
+}
+
+.flex-container-two{
+  display: flex;
+  height: 30px;
+/*   background-color: #f4f4f4;*/
+   align-items: center;
+   justify-content: space-around;
+    margin-top: 15px;
+  }
+
+.item2{
+  color: #fff;
+/*  background: #254de4;*/
+
+  }
+
+.flex-container-three{
+  display: flex;
+ /* height: 50px;*/
+  justify-content: space-around;
+  align-items: center;
+/*  background-color: #ff4f4f;
+*/  margin-top: 15px;
+margin-bottom: 1px;
+}
+
+.btn {
+  margin-bottom: 5px;}
+
+label {
+/*  color: #006DCC;*/
+  font-weight: 500;
+}
+
+input{
+  background-color: #fff;
+}
+input:hover {
+  background-color: #dee2e6;;
+  height: 30px;
+  border-style: 2 solid;
+  border-color: #006DCC;
+
+}
+
+/*nav {
+  background-color: rgba(0,0,255,0.4);
+  color: #fff;
+}*/
+

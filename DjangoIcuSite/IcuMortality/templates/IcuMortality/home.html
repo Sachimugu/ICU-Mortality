@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ICU Survival</title>
+    {% load static %}
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'IcuMortality/style.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-light" style="background-color: rgba(220,220,220,0.1);">
+         <div class="container-fluid">
+        <a class="navbar-brand text-warning" href=""><h3 style=" margin: 0px;
+padding: 5px;">ICU MORTALITY</h4></a>
+    <!-- <a class="nav-link" href="{% url 'home'%}">Home</a> -->
+
+        
+    </div>
+</nav>
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <h2>Predicting Mortality for ICU Patients</h2>
+                <p>Early physiological monitoring and laboratory surveillance can aid clinicians in making effective interventions to improve patient outcome.<br> Current mortality prediction models and scoring systems for intensive care unit patients are generally usable only after at least 48 hours of admission.<br> This machine learning model takes in parameter available with the first 24 hours of ICU admission to predict patient survival.</p>
+
+                {% if pred_result == 'ICU MORTALITY IS LOW' %}
+                <div class="result1"><h3 class="pred1">{{pred_result}}</h3></div>
+                {% elif pred_result == 'ICU MORTALITY IS HIGH' %}
+                <div class="result1"><h3 class="pred2">{{pred_result}}</h3></div>
+                {%else%}
+                <div> </div>
+                {% endif %}  
+                             
+            </div>
+
+            <div class="col">
+            <form action="{% url 'home'%}", method="Post">
+            {%csrf_token%}
+                        
+
+                <div class="container2 border border-dark">    
+
+                    <h4>Predictor Parameters:</h4> 
+                        <div class="flex-container">
+
+
+                            <div class="item">  
+                                <label for="fname">BMI:</label><br>
+                                <input type="number"  required  step="1", min="16" name="index0"><br><br>
+
+                                <label for="fname">Length Of ICU Stay:</label><br>
+                                <input type="number"  required  step="1", min="1" name="index1"><br><br>
+
+                                <label for="fname">Apache_2 Score:</label><br>
+                                <input type="number"  required step="1" min="101" max="308" name="index2"><br><br>
+
+                                <label for="fname">Apache_3 Score:</label><br>
+                                <input type="number" required step="1" min="1" name="index3"><br><br>
+
+                                <label for="fname">Eye Opening Score:</label><br>
+                                <input type="number" required  step="1" min='1' max='4' placeholder="1- 4" name="index4">
+                            </div>
+
+                            <div class="item">
+
+                                <label for="fname">Best Verbal Score:</label><br>
+                                <input type="number" required  step="1" min='1' max='5' placeholder="1- 5" name="index6"><br><br>
+
+                                <label for="fname">Best Motor Score:</label><br>
+                                <input type="number" required  step="1" min='1' max='6' placeholder="1- 6 "name="index5"><br><br>
+
+                                <label for="fname">24 Hours Min SYS_BP:</label><br>
+                                <input type="number" required step="1" min="1" name="index8"><br><br>
+
+                                <label for="fname">Hospital Death Prob:</label><br>
+                                <input type="number" required step=".01" min="0" max="1" name="index9"><br><br>
+
+                                <label for="fname">ICU Death Prob:</label><br>
+                                <input type="number" , required , step=".01",  min="0", max="1" name="index10">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="flex-container-two">
+                                    <div class="item2">
+                                    <label for="ven">Ventilator support:</label>
+                                    </div>
+
+                                    <div class="item2">
+                                    <label for="html">YES</label>
+                                    <input type="radio" id="html"  name="index7" required value=1>
+                                    </div>
+
+                                    <div class="item2">
+                                    <label for="css">NO</label>
+                                    <input type="radio" id="css" name="index7" value=0>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                            <div class="flex-container-three">
+                            <form action="https://ide.geeksforgeeks.org/">
+                            <button type="reset" onClick='window.location.href="{% url "home"%}" ;' class="btn btn-warning">Reset</button>
+                             </form>
+                            <button type="submit" class="btn btn-success">Predict</button>
+                            </div>
+                            </div>
+                        </div>
+                 </div>     
+                    
+                    
+
+        </div>    </form>
+    </div>
+ </div>
+</body>
+
+</html>
+     
+
+
